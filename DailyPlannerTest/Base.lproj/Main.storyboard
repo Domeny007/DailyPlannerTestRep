@@ -1,24 +1,187 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--To Do List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ToDoListViewController" customModule="DailyPlannerTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JmB-T1-qcD">
+                                <rect key="frame" x="0.0" y="324" width="414" height="538"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="2I8-Pa-lpf"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="otf-BB-tyB"/>
+                                </connections>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qlh-s9-6Ck">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem id="mU8-xE-M2T">
+                                        <barButtonItem key="rightBarButtonItem" title="Создать запись" id="Zdn-dL-v4M">
+                                            <connections>
+                                                <segue destination="FlQ-Ky-KR6" kind="show" id="uMS-0b-XZm"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B3B-Ok-MdL" customClass="FSCalendar">
+                                <rect key="frame" x="0.0" y="88" width="414" height="236"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="236" id="vOp-ts-idB"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="gQM-TV-qXt"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="CFs-t0-jx8"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="JmB-T1-qcD" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="BXL-KJ-DlL"/>
+                            <constraint firstItem="B3B-Ok-MdL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DPA-7y-7ZT"/>
+                            <constraint firstItem="Qlh-s9-6Ck" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="MuJ-iA-18u"/>
+                            <constraint firstItem="Qlh-s9-6Ck" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="SC5-5u-wbj"/>
+                            <constraint firstItem="JmB-T1-qcD" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="SPx-6N-n1o"/>
+                            <constraint firstItem="JmB-T1-qcD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TTu-jY-p4a"/>
+                            <constraint firstItem="B3B-Ok-MdL" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="glF-Be-nyv"/>
+                            <constraint firstItem="B3B-Ok-MdL" firstAttribute="top" secondItem="Qlh-s9-6Ck" secondAttribute="bottom" id="iOa-4i-Xd4"/>
+                            <constraint firstItem="Qlh-s9-6Ck" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="w8e-dF-VbX"/>
+                            <constraint firstItem="JmB-T1-qcD" firstAttribute="top" secondItem="B3B-Ok-MdL" secondAttribute="bottom" id="z3t-1B-RuJ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="calendar" destination="B3B-Ok-MdL" id="wbp-59-Vtd"/>
+                        <outlet property="tableView" destination="JmB-T1-qcD" id="8Hb-Ba-nNF"/>
+                        <segue destination="aVD-QB-XYm" kind="show" identifier="segue" id="ANR-5j-JSI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-191.30434782608697" y="142.63392857142856"/>
+        </scene>
+        <!--Detail Case View Controller-->
+        <scene sceneID="Ufx-Hd-44H">
+            <objects>
+                <viewController id="aVD-QB-XYm" customClass="DetailCaseViewController" customModule="DailyPlannerTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="482-IK-vIc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3n-Kz-qI5">
+                                <rect key="frame" x="10" y="106" width="394" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Краткое описание" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="G1L-Js-3rs">
+                                <rect key="frame" x="5" y="266" width="404" height="119"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ke-JY-VqZ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                <items>
+                                    <navigationItem id="rGt-Ir-ZGB">
+                                        <barButtonItem key="leftBarButtonItem" title="Назад" id="81X-c8-KJQ">
+                                            <connections>
+                                                <action selector="backButtonPressed:" destination="aVD-QB-XYm" id="Kqx-xj-ycc"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата и время" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxX-Dx-k8R">
+                                <rect key="frame" x="10" y="186" width="394" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="9ke-JY-VqZ" firstAttribute="trailing" secondItem="026-bQ-gXY" secondAttribute="trailing" id="4CX-pG-cQj"/>
+                            <constraint firstItem="026-bQ-gXY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="H3n-Kz-qI5" secondAttribute="trailing" id="57D-mp-vaW"/>
+                            <constraint firstItem="gxX-Dx-k8R" firstAttribute="top" secondItem="H3n-Kz-qI5" secondAttribute="bottom" constant="50" id="6IC-sE-Lns"/>
+                            <constraint firstItem="G1L-Js-3rs" firstAttribute="top" secondItem="gxX-Dx-k8R" secondAttribute="bottom" constant="50" id="9Eu-hd-jyA"/>
+                            <constraint firstItem="026-bQ-gXY" firstAttribute="trailing" secondItem="G1L-Js-3rs" secondAttribute="trailing" constant="5" id="FU8-H2-i3F"/>
+                            <constraint firstItem="H3n-Kz-qI5" firstAttribute="top" secondItem="9ke-JY-VqZ" secondAttribute="bottom" constant="50" id="RHt-fG-Pd7"/>
+                            <constraint firstItem="9ke-JY-VqZ" firstAttribute="top" secondItem="026-bQ-gXY" secondAttribute="top" id="V7k-I9-z8P"/>
+                            <constraint firstItem="026-bQ-gXY" firstAttribute="bottom" secondItem="G1L-Js-3rs" secondAttribute="bottom" constant="423" id="Vme-iP-Qoo"/>
+                            <constraint firstItem="gxX-Dx-k8R" firstAttribute="leading" secondItem="026-bQ-gXY" secondAttribute="leading" constant="10" id="a41-zB-c5J"/>
+                            <constraint firstItem="H3n-Kz-qI5" firstAttribute="centerX" secondItem="482-IK-vIc" secondAttribute="centerX" id="a7c-yX-BrH"/>
+                            <constraint firstItem="G1L-Js-3rs" firstAttribute="centerX" secondItem="482-IK-vIc" secondAttribute="centerX" id="bVl-Yj-grb"/>
+                            <constraint firstItem="9ke-JY-VqZ" firstAttribute="leading" secondItem="026-bQ-gXY" secondAttribute="leading" id="dV8-rt-Ora"/>
+                            <constraint firstItem="026-bQ-gXY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gxX-Dx-k8R" secondAttribute="trailing" id="ilX-90-4YD"/>
+                            <constraint firstItem="H3n-Kz-qI5" firstAttribute="leading" secondItem="026-bQ-gXY" secondAttribute="leading" constant="10" id="tqj-TI-kZY"/>
+                            <constraint firstItem="gxX-Dx-k8R" firstAttribute="centerX" secondItem="482-IK-vIc" secondAttribute="centerX" id="zF3-W8-iMd"/>
+                            <constraint firstItem="G1L-Js-3rs" firstAttribute="leading" secondItem="026-bQ-gXY" secondAttribute="leading" constant="5" id="zJ2-ZJ-yh5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="026-bQ-gXY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="oBq-18-5Gw"/>
+                    <connections>
+                        <outlet property="caseDescriptionTextView" destination="G1L-Js-3rs" id="uu2-oP-Oer"/>
+                        <outlet property="caseNameLabel" destination="H3n-Kz-qI5" id="WO5-l4-hjV"/>
+                        <outlet property="dateAndTimeLabel" destination="gxX-Dx-k8R" id="zxo-QZ-NSw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ehE-n2-NQS" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-191" y="880"/>
+        </scene>
+        <!--Create Case View Controller-->
+        <scene sceneID="bhs-w7-atX">
+            <objects>
+                <viewController id="FlQ-Ky-KR6" customClass="CreateCaseViewController" customModule="DailyPlannerTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="L7n-Md-bVc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hf0-XQ-puC">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem id="Bxx-Fe-VIW">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" id="q5r-MQ-sEW">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Hvl-KM-x2b">
+                                                <rect key="frame" x="20" y="13" width="92" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Назад"/>
+                                            </button>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" id="3FS-lb-vaV">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="igN-v6-ahN">
+                                                <rect key="frame" x="302" y="13" width="92" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Создать"/>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="arW-9G-Pms"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HCz-Rb-Mr3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="662" y="143"/>
         </scene>
     </scenes>
 </document>
