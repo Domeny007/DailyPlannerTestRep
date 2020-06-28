@@ -7,6 +7,7 @@ target 'DailyPlannerTest' do
 
   # Pods for DailyPlannerTest
 pod 'FSCalendar'
+pod 'SwiftyJSON', '~> 4.0'
 
   target 'DailyPlannerTestTests' do
     inherit! :search_paths
