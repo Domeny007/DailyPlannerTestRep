@@ -1,0 +1,6 @@
+framework module Pods_DailyPlannerTestTests {
+  umbrella header "Pods-DailyPlannerTestTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
