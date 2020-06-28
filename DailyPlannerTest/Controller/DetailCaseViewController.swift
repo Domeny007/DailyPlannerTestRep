@@ -15,18 +15,16 @@ class DetailCaseViewController: UIViewController {
     @IBOutlet weak var caseDescriptionTextView: UITextView!
     
     var destArray = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        for i in destArray{
-            print(i)
-        }
-        // Do any additional setup after loading the view.
+        caseNameLabel.text = destArray[0]
+        caseDescriptionTextView.text = destArray[1]
+        dateAndTimeLabel.text = destArray[2]
     }
     
     @IBAction func backButtonPressed(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
-    
-
+    //MARK:- function to present details of the case
 }

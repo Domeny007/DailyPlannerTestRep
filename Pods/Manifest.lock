@@ -1,16 +1,20 @@
 PODS:
   - FSCalendar (2.8.1)
+  - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
   - FSCalendar
+  - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   trunk:
     - FSCalendar
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   FSCalendar: 5245140456fcbcac5824c203b98bd8068bdfee1a
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: b840e5a730a2dab02bfa356d4658eb0883b1dfc7
+PODFILE CHECKSUM: cc91205e9e8c7ba9dd8d1f7d91d79b7c60d1e0e0
 
 COCOAPODS: 1.9.3
