@@ -19,7 +19,6 @@
 		7676044C249E82CC007D277E /* CaseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7676044A249E82CC007D277E /* CaseTableViewCell.xib */; };
 		7676044E249F9AE8007D277E /* CreateCaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7676044D249F9AE8007D277E /* CreateCaseViewController.swift */; };
 		76760451249FD7F6007D277E /* Data.json in Resources */ = {isa = PBXBuildFile; fileRef = 76760450249FD7F6007D277E /* Data.json */; };
-		76760453249FD8F6007D277E /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76760452249FD8F6007D277E /* Service.swift */; };
 		76760455249FDEFA007D277E /* CaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76760454249FDEFA007D277E /* CaseModel.swift */; };
 		769FEFAC24A62DC000751BF1 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769FEFAB24A62DC000751BF1 /* Time.swift */; };
 		A32BF9DFDEE01007DCAE3D06 /* Pods_DailyPlannerTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52AB9D2243DD3C8B703C851F /* Pods_DailyPlannerTest.framework */; };
@@ -55,7 +54,6 @@
 		7676044A249E82CC007D277E /* CaseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CaseTableViewCell.xib; sourceTree = "<group>"; };
 		7676044D249F9AE8007D277E /* CreateCaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCaseViewController.swift; sourceTree = "<group>"; };
 		76760450249FD7F6007D277E /* Data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Data.json; sourceTree = "<group>"; };
-		76760452249FD8F6007D277E /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		76760454249FDEFA007D277E /* CaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseModel.swift; sourceTree = "<group>"; };
 		769FEFAB24A62DC000751BF1 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		792E11204FB0D7F4A2AF8E75 /* Pods-DailyPlannerTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyPlannerTestTests.release.xcconfig"; path = "Target Support Files/Pods-DailyPlannerTestTests/Pods-DailyPlannerTestTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -124,7 +122,6 @@
 				7676042B249E311E007D277E /* Assets.xcassets */,
 				7676042D249E311E007D277E /* LaunchScreen.storyboard */,
 				76760430249E311E007D277E /* Info.plist */,
-				76760452249FD8F6007D277E /* Service.swift */,
 				76760454249FDEFA007D277E /* CaseModel.swift */,
 				769FEFAB24A62DC000751BF1 /* Time.swift */,
 			);
@@ -342,7 +339,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7676044E249F9AE8007D277E /* CreateCaseViewController.swift in Sources */,
-				76760453249FD8F6007D277E /* Service.swift in Sources */,
 				76760423249E3119007D277E /* AppDelegate.swift in Sources */,
 				76760445249E32F6007D277E /* ToDoListViewController.swift in Sources */,
 				7676044B249E82CC007D277E /* CaseTableViewCell.swift in Sources */,

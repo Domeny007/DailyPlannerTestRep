@@ -1,34 +1,30 @@
 [
 {
-    "id": "1",
     "day_id":1,
-    "date_start":"1593367920",
-    "date_finish":"1593367920",
-    "name":"Магазин",
-    "description":"Сходить в магазин"
+    "caseDateStart":1593367920,
+    "caseDateFinish":1593367920,
+    "caseName":"Магазин",
+    "caseDescription":"Сходить в магазин"
 },
 {
-    "id": "2",
     "day_id":1,
-    "date_start":"1593353520",
-    "date_finish":"1593356340",
-    "name":"Убраться дома",
-    "description":"Помыть посуду"
+    "caseDateStart":1593353520,
+    "caseDateFinish":1593356340,
+    "caseName":"Убраться дома",
+    "caseDescription":"Помыть посуду"
 },
 {
-    "id": "2",
     "day_id":2,
-    "date_start":"1593353520",
-    "date_finish":"1593356340",
-    "name":"Домашка",
-    "description":"Сделать домашку"
+    "caseDateStart":1593353520,
+    "caseDateFinish":1593356340,
+    "caseName":"Домашка",
+    "caseDescription":"Сделать домашку"
 },
 {
-    "id": "4",
     "day_id": 2,
-    "date_start":"1593367920",
-    "date_finish":"1593367920",
-    "name":"Уроки",
-    "description":"Сделать уроки"
+    "caseDateStart":1593367920,
+    "caseDateFinish":1593367920,
+    "caseName":"Уроки",
+    "caseDescription":"Сделать уроки"
 },
 ]

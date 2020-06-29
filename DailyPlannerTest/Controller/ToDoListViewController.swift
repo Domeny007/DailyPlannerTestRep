@@ -8,32 +8,45 @@
 import FSCalendar
 import UIKit
 import SwiftyJSON
+import RealmSwift
 
 class ToDoListViewController: UIViewController, FSCalendarDelegate, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var calendar: FSCalendar!
     @IBOutlet weak var tableView: UITableView!
     fileprivate let caseCellIdentifier = "caseIdentifier"
     fileprivate let nibNameString = "CaseTableViewCell"
+    let realm = try! Realm()
     var incomeCases = [Case]()
     var timeArray = [Date]()
     var dayCasesArray = [Case]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         registerNib()
         createTimeArray()
     }
-    
     //MARK:- Working with calendar
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        
+        
+        //Get items from JSON
         dayCasesArray = [Case]()
         let formatter = DateFormatter()
         formatter.dateFormat = "dd"
         let dayString = formatter.string(from: date)
-        print("Selected", dayString)
         let dayNumber = Int(dayString)
         dayCasesArray = getCasesByDay(dayNumber!)
-        print(dayCasesArray)
+        
+        //Get items from Realm
+        var items: Results<Case>
+        items = realm.objects(Case.self)
+        for item in items {
+            if item.day_id == dayNumber! {
+                dayCasesArray.append(item)
+            }
+        }
+        
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
@@ -83,21 +96,32 @@ class ToDoListViewController: UIViewController, FSCalendarDelegate, UITableViewD
     }
     
     func checkCaseIsInTheRange(caseLeftHour: Int, caseRightHour: Int) -> (String, String) {
+        var dateStart = 0
+        var dateFinish = 0
+        print(dayCasesArray)
         for item in dayCasesArray {
-            print(dayCasesArray)
-            let dateStart = Date(timeIntervalSince1970: Double(Int(item.date_start)!))
-            let dateFinish = Date(timeIntervalSince1970: Double(Int(item.date_finish)!))
-            print(caseLeftHour,dateStart.time.hour, caseRightHour, dateFinish.time.hour)
-            if dateStart.time.hour >= caseLeftHour && dateFinish.time.hour < caseRightHour  {
-                return (item.name, item.description)
+            if String(item.caseDateStart).count > 2 {
+                dateStart = Date(timeIntervalSince1970: Double(Int(item.caseDateStart))).time.hour
+                dateFinish = Date(timeIntervalSince1970: Double(Int(item.caseDateFinish))).time.hour
+                print(caseLeftHour,dateStart, caseRightHour, dateFinish)
+            } else {
+                dateStart = item.caseDateStart
+                dateFinish = item.caseDateFinish
+                print(caseLeftHour, dateStart,caseRightHour, dateFinish)
             }
-        }
+            if dateStart >= caseLeftHour && dateFinish < caseRightHour  {
+                return (item.caseName, item.caseDescription)
+            }
+            
+//            let dateStart = Date(timeIntervalSince1970: Double(Int(item.caseDateStart)))
+//            let dateFinish = Date(timeIntervalSince1970: Double(Int(item.caseDateFinish)))
+//            print(caseLeftHour,dateStart.time.hour, caseRightHour, dateFinish.time.hour)
+//            if dateStart.time.hour >= caseLeftHour && dateFinish.time.hour < caseRightHour  {
+//                return (item.caseName, item.caseDescription)
+            }
         return ("","")
-    }
+        }
     
-    func getTimeFromCase(){
-        
-    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: caseCellIdentifier, for: indexPath) as! CaseTableViewCell

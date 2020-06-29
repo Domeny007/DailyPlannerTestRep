@@ -1,20 +1,30 @@
 PODS:
   - FSCalendar (2.8.1)
+  - Realm (5.1.0):
+    - Realm/Headers (= 5.1.0)
+  - Realm/Headers (5.1.0)
+  - RealmSwift (5.1.0):
+    - Realm (= 5.1.0)
   - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
   - FSCalendar
+  - RealmSwift
   - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   trunk:
     - FSCalendar
+    - Realm
+    - RealmSwift
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   FSCalendar: 5245140456fcbcac5824c203b98bd8068bdfee1a
+  Realm: bdea546851e37b4cf0a2400cef115c7c26fda488
+  RealmSwift: 70945aa168db93b215c460e9c8ef680261aa28af
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: cc91205e9e8c7ba9dd8d1f7d91d79b7c60d1e0e0
+PODFILE CHECKSUM: f5d668b247a84748a76217d233e99baf0aa9bb05
 
 COCOAPODS: 1.9.3

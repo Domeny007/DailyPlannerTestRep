@@ -152,9 +152,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hf0-XQ-puC">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hf0-XQ-puC">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                                 <items>
                                     <navigationItem id="Bxx-Fe-VIW">
                                         <barButtonItem key="leftBarButtonItem" style="plain" id="q5r-MQ-sEW">
@@ -180,48 +179,84 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="217-FS-88e">
-                                <rect key="frame" x="0.0" y="110" width="414" height="216"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="217-FS-88e">
+                                <rect key="frame" x="0.0" y="328" width="414" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="Xs8-7z-j7z"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="dataSource" destination="FlQ-Ky-KR6" id="14E-GZ-P5W"/>
                                     <outlet property="delegate" destination="FlQ-Ky-KR6" id="aL9-BW-dDB"/>
                                 </connections>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Время дела" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1f1-es-A2J">
-                                <rect key="frame" x="160" y="88" width="94" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Время дела" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1f1-es-A2J">
+                                <rect key="frame" x="0.0" y="302" width="414" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Название" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZOz-9o-CBY">
-                                <rect key="frame" x="20" y="334" width="374" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Название" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZOz-9o-CBY">
+                                <rect key="frame" x="0.0" y="488" width="414" height="34"/>
                                 <color key="backgroundColor" systemColor="quaternarySystemFillColor" red="0.4549019608" green="0.4549019608" blue="0.50196078430000002" alpha="0.080000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3Bw-C0-Fer">
-                                <rect key="frame" x="20" y="505" width="374" height="211"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3Bw-C0-Fer">
+                                <rect key="frame" x="0.0" y="558" width="414" height="250"/>
                                 <color key="backgroundColor" systemColor="quaternarySystemFillColor" red="0.4549019608" green="0.4549019608" blue="0.50196078430000002" alpha="0.080000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="zsc-La-80m"/>
+                                </constraints>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Описание дела" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGc-hP-uVd">
-                                <rect key="frame" x="146" y="462" width="123" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Описание дела" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGc-hP-uVd">
+                                <rect key="frame" x="0.0" y="532" width="414" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kku-Mz-eN1" customClass="FSCalendar">
+                                <rect key="frame" x="0.0" y="56" width="414" height="236"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="FlQ-Ky-KR6" id="RNT-FX-qa1"/>
+                                    <outlet property="delegate" destination="FlQ-Ky-KR6" id="Cf3-Xb-5BR"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Kku-Mz-eN1" firstAttribute="leading" secondItem="arW-9G-Pms" secondAttribute="leading" id="0RI-ej-Lhs"/>
+                            <constraint firstItem="Hf0-XQ-puC" firstAttribute="trailing" secondItem="arW-9G-Pms" secondAttribute="trailing" id="8YS-YY-Pi0"/>
+                            <constraint firstItem="Hf0-XQ-puC" firstAttribute="leading" secondItem="arW-9G-Pms" secondAttribute="leading" id="AWu-5I-ezI"/>
+                            <constraint firstItem="Kku-Mz-eN1" firstAttribute="trailing" secondItem="arW-9G-Pms" secondAttribute="trailing" id="HNd-Dx-scH"/>
+                            <constraint firstItem="ZOz-9o-CBY" firstAttribute="top" secondItem="217-FS-88e" secondAttribute="bottom" constant="10" id="I4r-jY-Q45"/>
+                            <constraint firstItem="arW-9G-Pms" firstAttribute="trailing" secondItem="ZOz-9o-CBY" secondAttribute="trailing" id="IHw-EQ-xEc"/>
+                            <constraint firstItem="217-FS-88e" firstAttribute="top" secondItem="1f1-es-A2J" secondAttribute="bottom" constant="5" id="Okr-3s-e6J"/>
+                            <constraint firstItem="ZOz-9o-CBY" firstAttribute="leading" secondItem="arW-9G-Pms" secondAttribute="leading" id="Pl2-bB-fa3"/>
+                            <constraint firstItem="217-FS-88e" firstAttribute="leading" secondItem="arW-9G-Pms" secondAttribute="leading" id="UeK-tE-5BR"/>
+                            <constraint firstItem="arW-9G-Pms" firstAttribute="trailing" secondItem="LGc-hP-uVd" secondAttribute="trailing" id="YE5-rB-eDb"/>
+                            <constraint firstItem="LGc-hP-uVd" firstAttribute="top" secondItem="ZOz-9o-CBY" secondAttribute="bottom" constant="10" id="Yz5-Fg-3TA"/>
+                            <constraint firstItem="arW-9G-Pms" firstAttribute="trailing" secondItem="217-FS-88e" secondAttribute="trailing" id="eul-DI-zkv"/>
+                            <constraint firstItem="1f1-es-A2J" firstAttribute="leading" secondItem="arW-9G-Pms" secondAttribute="leading" id="icP-zF-cgq"/>
+                            <constraint firstItem="Hf0-XQ-puC" firstAttribute="top" secondItem="arW-9G-Pms" secondAttribute="top" id="j5L-0h-TQN"/>
+                            <constraint firstItem="arW-9G-Pms" firstAttribute="trailing" secondItem="3Bw-C0-Fer" secondAttribute="trailing" id="k9J-ZL-o7S"/>
+                            <constraint firstItem="Kku-Mz-eN1" firstAttribute="top" secondItem="Hf0-XQ-puC" secondAttribute="bottom" id="oxA-y6-f7f"/>
+                            <constraint firstItem="arW-9G-Pms" firstAttribute="trailing" secondItem="1f1-es-A2J" secondAttribute="trailing" id="pPh-F9-wJe"/>
+                            <constraint firstItem="3Bw-C0-Fer" firstAttribute="bottom" secondItem="arW-9G-Pms" secondAttribute="bottom" id="vVy-Ex-HZR"/>
+                            <constraint firstItem="3Bw-C0-Fer" firstAttribute="top" secondItem="LGc-hP-uVd" secondAttribute="bottom" constant="5" id="wbD-id-ANM"/>
+                            <constraint firstItem="1f1-es-A2J" firstAttribute="top" secondItem="Kku-Mz-eN1" secondAttribute="bottom" constant="10" id="ygO-6Z-LkH"/>
+                            <constraint firstItem="LGc-hP-uVd" firstAttribute="leading" secondItem="arW-9G-Pms" secondAttribute="leading" id="zPx-8u-fLB"/>
+                            <constraint firstItem="3Bw-C0-Fer" firstAttribute="leading" secondItem="arW-9G-Pms" secondAttribute="leading" id="zat-9v-kxA"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="arW-9G-Pms"/>
                     </view>
                     <connections>
+                        <outlet property="calendar" destination="Kku-Mz-eN1" id="SyK-gs-dvG"/>
+                        <outlet property="descriptionTextView" destination="3Bw-C0-Fer" id="IKE-Q7-tp7"/>
+                        <outlet property="nameTextField" destination="ZOz-9o-CBY" id="ZhU-Mn-rHv"/>
                         <outlet property="picker" destination="217-FS-88e" id="Pb4-kA-gyg"/>
                     </connections>
                 </viewController>

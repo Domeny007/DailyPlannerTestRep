@@ -7,12 +7,12 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct Case: Decodable{
-    var day_id: Int
-    var name: String
-    var id: String
-    var date_start: String
-    var date_finish: String
-    var description:String
+class Case: Object, Decodable{
+    @objc dynamic var day_id: Int = 0
+    @objc dynamic var caseName: String = ""
+    @objc dynamic var caseDateStart: Int = 0
+    @objc dynamic var caseDateFinish: Int = 0
+    @objc dynamic var caseDescription:String = ""
 }
